@@ -1,16 +1,26 @@
 # Bank Account Cobol
 
+<img src="https://github.com/sitMCella/bank-account-cobol/wiki/images/bank_account_cobol_1.png">
+
+## Table of contents
+
+* [Introduction](#introduction)
+* [Requirements](#requirements)
+* [Run Application](#run-application)
+
+## Introduction
+
 Bank account Cobol is a web application that uses GnuCOBOL to process account balances and transactions.
 
-## Development
-
-Bank Account Cobol is a web application built using Python and GnuCOBOL in the backend and Vue.js on the frontend.
-
-### Setup
+### Requirements
 
 Install Docker (Docker compose).
 
-### Build and run application (production)
+## Run Application
+
+Bank Account Cobol is a web application built using Python and GnuCOBOL in the backend and Vue.js on the frontend.
+
+### Build and run application
 
 Build and run the application in Docker:
 
