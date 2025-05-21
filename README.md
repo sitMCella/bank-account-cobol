@@ -1,6 +1,6 @@
 # Bank Account Cobol
 
-<img src="https://github.com/sitMCella/bank-account-cobol.wiki.git/images/bank_account_cobol_1.png">
+<img src="https://github.com/sitMCella/bank-account-cobol/wiki/images/bank_account_cobol_1.png">
 
 ## Table of contents
 
