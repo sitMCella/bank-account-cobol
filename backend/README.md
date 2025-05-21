@@ -1,10 +1,10 @@
-# Bank Account Cobol Backend
+# Bank Account Backend
 
-Python web application that interfaces with OpenCobol to process account balances and transactions.
+Python web application that interfaces with GnuCOBOL to process account balances and transactions.
 
-The integration between Python and OpenCobol was inspired by the project https://github.com/perspectivism/web-stacks-with-cobol.
+The integration between Python and GnuCOBOL was inspired by the project https://github.com/perspectivism/web-stacks-with-cobol.
 
-The following Dockerfile for OpenCobol has been used: https://github.com/humbertodias/docker-cobol-gnu/blob/main/Dockerfile.alpine.
+The following Dockerfile for GnuCOBOL has been used: https://github.com/humbertodias/docker-cobol-gnu/blob/main/Dockerfile.alpine.
 
 ## Development
 

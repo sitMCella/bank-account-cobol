@@ -1,10 +1,10 @@
 # Bank Account Cobol
 
-Bank account web application that uses OpenCobol to process account balances and transactions.
+Bank account Cobol is a web application that uses GnuCOBOL to process account balances and transactions.
 
 ## Development
 
-Bank Account Cobol is a web application built using Python and OpenCobol in the backend and Vue.js on the frontend.
+Bank Account Cobol is a web application built using Python and GnuCOBOL in the backend and Vue.js on the frontend.
 
 ### Setup
 
