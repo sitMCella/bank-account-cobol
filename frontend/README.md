@@ -1,6 +1,6 @@
 # Bank Account Frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+Bank Account frontend application developed using Vue 3 in Vite.
 
 ## Vue.js
 
