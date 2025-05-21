@@ -74,9 +74,9 @@ const getAccounts = async () => {
     })
 }
 
-const getTransactions = async (account_id: string, type: string): Promise<Transactions> => {
+const getTransactions = async (account_id: string, type: string, start: string): Promise<Transactions> => {
   return await axios
-    .get<Account[]>('/api/accounts/' + account_id + '/transactions?type=' + type + '&start=0')
+    .get<Account[]>('/api/accounts/' + account_id + '/transactions?type=' + type + '&start=' + start)
     .then(async (response) => {
       if (response.status !== 200) {
         errorMessage.value = 'Cannot retrieve Transactions'
@@ -98,6 +98,37 @@ const getTransactions = async (account_id: string, type: string): Promise<Transa
     })
 }
 
+const getTransactionsPagination = async (account_id: num, type: string) => {
+  console.log('get transactions ' + type)
+  let all_type_transactions: Transactions = []
+  let start = ''
+  let lastTransactionPagination = '-1'
+  let transactionsPaginationCount = 1
+  while(transactionsPaginationCount > 0) {
+    start = `${parseInt(lastTransactionPagination, 10) + 1}`
+    await getTransactions(account_id, type, start).then(async (type_transactions) => {
+      console.log(type_transactions.value)
+      console.log('transactions length: ' + type_transactions.value.length)
+      if(type_transactions.value.length === 0) {
+        transactionsPaginationCount = 0
+      } else {
+        const transactionPagination = type_transactions.value.sort(
+          (a, b) => a.transaction_id - b.transaction_id
+        )
+        console.log(transactionPagination)
+        lastTransactionPagination = transactionPagination[type_transactions.value.length - 1].transaction_id
+        transactionsPaginationCount = type_transactions.value.length
+        type_transactions.value.forEach((t) => {
+          t.type = type
+          t.timestamp = parseTimestamp(t)
+        })
+        all_type_transactions = [...all_type_transactions, ...type_transactions.value]
+      }
+    })
+  }
+  return all_type_transactions
+}
+
 const getAllTransactions = async (id: string) => {
   const account_id = parseInt(id, 10)
   if (isNaN(account_id)) {
@@ -105,19 +136,11 @@ const getAllTransactions = async (id: string) => {
     return
   }
   let all_transactions: Transactions = []
-  await getTransactions(account_id, 'credit').then(async (credit_transactions) => {
-    credit_transactions.value.forEach((t) => {
-      t.type = 'credit'
-      t.timestamp = parseTimestamp(t)
-    })
-    all_transactions = [...credit_transactions.value]
+  await getTransactionsPagination(account_id, 'credit').then(async (credit_transactions) => {
+    all_transactions = [...credit_transactions]
   })
-  await getTransactions(account_id, 'debit').then(async (debit_transactions) => {
-    debit_transactions.value.forEach((t) => {
-      t.type = 'debit'
-      t.timestamp = parseTimestamp(t)
-    })
-    all_transactions = [...all_transactions, ...debit_transactions.value]
+  await getTransactionsPagination(account_id, 'debit').then(async (debit_transactions) => {
+    all_transactions = [...all_transactions, ...debit_transactions]
   })
   transactions.value = all_transactions.sort(
     (a, b) => a.timestamp - b.timestamp
