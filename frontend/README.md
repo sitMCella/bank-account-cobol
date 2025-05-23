@@ -51,5 +51,5 @@ npm run format
 ## Type Check
 
 ```sh
-type-check
+npm run type-check
 ```
