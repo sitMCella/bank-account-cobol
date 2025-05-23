@@ -6,15 +6,26 @@ The integration between Python and GnuCOBOL was inspired by the project https://
 
 The following Dockerfile for GnuCOBOL has been used: https://github.com/humbertodias/docker-cobol-gnu/blob/main/Dockerfile.alpine.
 
-## Development
+# Development
 
-### Cobol
+## Build and run application
 
-Renumber Cobol files:
+Build and run the backend application in Docker:
 
 ```sh
-cd cobol
-make renumber
+docker-compose -f docker-compose.yml up
+```
+
+Stop the application in Docker:
+
+```sh
+docker-compose -f docker-compose.yml stop
+```
+
+Clean the Docker builds:
+
+```sh
+docker buildx prune
 ```
 
 # REST APIs

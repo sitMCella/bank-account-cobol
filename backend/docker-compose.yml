@@ -10,13 +10,3 @@ services:
       - type: bind
         source: ./app_storage
         target: /opt/app/storage
-
-  frontend:
-    image: "bankaccountcobol/frontend"
-    build:
-      dockerfile: "frontend/Dockerfile"
-    container_name: "bankaccountcobol-frontend"
-    ports:
-      - "80:80"
-    depends_on:
-      - backend

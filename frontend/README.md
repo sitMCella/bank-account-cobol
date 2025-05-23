@@ -2,6 +2,12 @@
 
 Bank Account frontend application developed using Vue 3 in Vite.
 
+# Development
+
+## Requirements
+
+Install Node.js >= 20.15.1
+
 ## Vue.js
 
 https://vuejs.org/
@@ -18,24 +24,32 @@ https://pictogrammers.com/library/mdi/
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
 ## Project Setup
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+## Compile and Hot-Reload for Development
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+## Compile and Minify for Production
 
 ```sh
 npm run build
+```
+
+## Format Code
+
+```sh
+npm run format
+```
+
+## Type Check
+
+```sh
+type-check
 ```
