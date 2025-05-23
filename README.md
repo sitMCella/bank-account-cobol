@@ -12,7 +12,7 @@
 
 Bank account Cobol is a web application that uses GnuCOBOL to process account balances and transactions.
 
-### Requirements
+## Requirements
 
 Install Docker (Docker compose).
 
