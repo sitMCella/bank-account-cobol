@@ -22,36 +22,36 @@ make renumber
 Create Account:
 
 ```sh
-curl --header "Content-Type: application/json" -X POST --data '{"balance_total":"11.99"}' http://localhost:8081/accounts/1
+curl --header "Content-Type: application/json" -X POST --data '{"balance_total":"11.99"}' http://localhost:8081/api/accounts/1
 ```
 
 Read Account:
 
 ```sh
-curl -X GET http://localhost:8081/accounts/1
+curl -X GET http://localhost:8081/api/accounts/1
 ```
 
 Read Accounts:
 
 ```sh
-curl -X GET http://localhost:8081/accounts
+curl -X GET http://localhost:8081/api/accounts
 ```
 
 Create Transaction:
 
 ```sh
-curl --header "Content-Type: application/json" -X POST --data '{"destination_id":"2", "amount":"11.99"}' http://localhost:8081/accounts/1/transactions
+curl --header "Content-Type: application/json" -X POST --data '{"destination_id":"2", "amount":"11.99"}' http://localhost:8081/api/accounts/1/transactions
 ```
 
 Read Transactions:
 
 ```sh
-curl -X GET "http://localhost:8081/accounts/1/transactions?type=<type>&start=<start>"
+curl -X GET "http://localhost:8081/api/accounts/1/transactions?type=<type>&start=<start>"
 ```
 where `type` is either `credit` or `debit`, and `start` is the start transaction id for pagination.
 
 Process Transactions:
 
 ```sh
-curl -X PUT "http://localhost:8081/accounts/1/transactions"
+curl -X PUT "http://localhost:8081/api/accounts/1/transactions"
 ```

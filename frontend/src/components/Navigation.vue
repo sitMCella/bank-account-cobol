@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useTheme } from 'vuetify'
+import { useTheme } from "vuetify";
 </script>
 
 <template>
@@ -7,13 +7,13 @@ import { useTheme } from 'vuetify'
     <v-layout>
       <v-list density="compact" nav>
         <v-list-item value="account" :to="{ path: '/account' }">
-            <v-icon small>mdi-account</v-icon>
+          <v-icon small>mdi-account</v-icon>
         </v-list-item>
         <v-list-item value="transaction" :to="{ path: '/transaction' }">
-            <v-icon small>mdi-send</v-icon>
+          <v-icon small>mdi-send</v-icon>
         </v-list-item>
         <v-list-item value="admin" :to="{ path: '/admin' }">
-            <v-icon small>mdi-security</v-icon>
+          <v-icon small>mdi-security</v-icon>
         </v-list-item>
       </v-list>
     </v-layout>
